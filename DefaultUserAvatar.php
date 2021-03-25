@@ -20,23 +20,26 @@
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
 
+
 if(!class_exists('DefaultUserAvatar')):
 
 class DefaultUserAvatar
 {
     public $url;
+    public $url_part;
 
     public static $plugin_url;
     public static $plugin_path;
 
-    public function __construct( string $url = null)
+    public function __construct( string $url = null, string $url_part = null)
     {
         add_filter('avatar_defaults',   [$this, 'new_default_avatar'], 1);
         add_filter('get_avatar',        [$this, 'media_get_avatar'], 1, 6);
 
         self::$plugin_url = defined( 'RW_PLUGIN_URL' ) ? RW_PLUGIN_URL : plugin_dir_url( __FILE__ );
 
-        $this->url = $url ?? self::$plugin_url . 'assets/images/user_gray.svg';
+        $this->url_part = $url_part ?? 'assets/images/user_gray.svg';
+        $this->url = $url ?? self::$plugin_url . $this->url_part;
     }
 
     /**
