@@ -1,4 +1,4 @@
-# Default User Avatar
+# Wordpress Plugin: Default User Avatar
 
 ### WordPress plugin
 
