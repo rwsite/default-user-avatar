@@ -1,0 +1,15 @@
+{
+  "name": "rwsite/default-user-avatar",
+  "description": "default-user-avatar",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Aleksei Tikhomirov",
+      "email": "alex@rwsite.ru"
+    }
+  ],
+  "require": {
+  }
+}
